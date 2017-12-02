@@ -4,7 +4,9 @@ export default class MainScene extends Component {
     render() {
         return [
             <a-marker preset="hiro">
-                <a-box position='0 0.5 0' material='color: black'></a-box>
+                <a-plane color="#f4f4f4" height="1" width="2" rotation="-90 0 0">
+                    <a-text value="Ayy Lemao" color="#666"></a-text>
+                </a-plane>
             </a-marker>,
             <a-entity camera look-controls></a-entity>
         ]
