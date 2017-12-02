@@ -1,11 +1,21 @@
 import React, { Component } from "react";
+import QRActions from "../../action";
+import { connect } from "react-redux";
 const Instascan = require('instascan');
 
-export default class QRScanner extends Component {
+class QRScanner extends Component {
+    constructor(props) {
+      super(props);
+    }
     componentDidMount() {
+      const { trigger, history } = this.props;
       let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
-      scanner.addListener('scan', function (content) {
+      scanner.addListener('scan', (content) => {
+        console.log(this.props);
         console.log(content);
+        let QRData = {url: "freddycheungh.com", name: "Nike Air v5", maker: "Nike"}
+        trigger(QRData);
+        //history.push('/ar')
       });
       Instascan.Camera.getCameras().then(function (cameras) {
         if (cameras.length > 0) {
@@ -26,3 +36,13 @@ export default class QRScanner extends Component {
         )
     }
 }
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        trigger: (data) => {
+            dispatch(QRActions(data));
+        }
+    }
+}
+
+export default connect(null, mapDispatchToProps)(QRScanner);

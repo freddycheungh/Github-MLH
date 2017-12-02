@@ -3,7 +3,7 @@
 const loadARComponent = (state={}, action) => {
   switch(action.type) {
     case "AR_COMPONENT":
-      return state = { ...state, activeMenu: action.payload }
+      return state = { ...state, QRData: action.payload }
     default:
       return state;
   }
