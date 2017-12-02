@@ -25,6 +25,7 @@
   "homepage": "https://github.com/freddycheungh/AR-Demo#readme",
   "dependencies": {
     "express": "^4.16.2",
+    "instascan": "^1.0.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-router": "^4.2.0",
