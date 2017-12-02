@@ -9,10 +9,10 @@
   <meta name="author" content="Boilter-plated by Freddy Cheungh.">
   <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
   <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"> </script>
+  <link rel="stylesheet" href="dist/index.css"/>
 </head>
 <body>
-  <a-scene arjs='detectionMode: mono_and_matrix; matrixCodeType: 3x3;' id="content"></a-scene>
-
+  <a-scene embedded id="content"> </a-scene>
   <script src="/bundle.js"> </script>
 </body>
 </html>
